@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://u3nccdqvg4mw"]
+
+[ext_resource type="Script" uid="uid://c33a2gh84wfh4" path="res://src/Scripts/Globals/audio.gd" id="1_eslfk"]
+[ext_resource type="AudioStream" uid="uid://cs4372a1ekx7b" path="res://src/Assets/SFX/ui_audio/focus/Retro1.mp3" id="2_taluy"]
+[ext_resource type="AudioStream" uid="uid://dkesiuigbhwla" path="res://src/Assets/SFX/ui_audio/click/Retro7.wav" id="3_tnnwo"]
+[ext_resource type="AudioStream" uid="uid://btblmo23e6cxk" path="res://src/Assets/SFX/ui_audio/error/Retro Event Wrong Simple 03.wav" id="4_pnbcp"]
+[ext_resource type="AudioStream" uid="uid://cl6mu7hihfll8" path="res://src/Assets/SFX/ui_audio/sucess/Retro Event UI 13.wav" id="5_6fghh"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_a3752"]
+polyphony = 16
+
+[node name="Audio" type="Node" unique_id=2058785530]
+process_mode = 3
+script = ExtResource("1_eslfk")
+ui_focus_audio = ExtResource("2_taluy")
+ui_select_audio = ExtResource("3_tnnwo")
+ui_sucess_audio = ExtResource("5_6fghh")
+ui_error_audio = ExtResource("4_pnbcp")
+
+[node name="Music1" type="AudioStreamPlayer" parent="." unique_id=2098363326]
+unique_name_in_owner = true
+
+[node name="Music2" type="AudioStreamPlayer" parent="." unique_id=1902748986]
+unique_name_in_owner = true
+
+[node name="UI" type="AudioStreamPlayer" parent="." unique_id=1939014574]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamPolyphonic_a3752")

@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="SteamDB_Interface"
+run/main_scene="uid://bl0l4khro66t0"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[autoload]
+
+SaveManager="*uid://dnruncr11rjty"
+SceneManager="*uid://kxi7d3h6hhq5"
+Audio="*uid://u3nccdqvg4mw"
+
+[display]
+
+window/size/viewport_width=1260
+window/size/viewport_height=720
+
+[gui]
+
+theme/custom_font="uid://bv752yty3p3g0"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

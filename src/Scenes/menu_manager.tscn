@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bc3adctuerrqq"]
+
+[ext_resource type="Script" uid="uid://pykvt418qgr0" path="res://src/Scripts/menu_manager.gd" id="1_0jbor"]
+
+[node name="MenuManager" type="Node" unique_id=745248668]
+script = ExtResource("1_0jbor")

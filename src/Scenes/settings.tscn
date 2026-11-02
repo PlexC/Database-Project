@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://cfso5nqbxdxa5"]
+
+[ext_resource type="Script" uid="uid://yfe6h8vo3sab" path="res://src/Scripts/tile_container_sizer.gd" id="1_2owe1"]
+[ext_resource type="Script" uid="uid://dfdx72k0w4sel" path="res://src/Scripts/settings.gd" id="1_yjjap"]
+[ext_resource type="Texture2D" uid="uid://dc1vujqapsiqc" path="res://src/Assets/UI/UI/Containers/ui_frame1.png" id="2_ti8s7"]
+[ext_resource type="Texture2D" uid="uid://rt4trq7onxm2" path="res://src/Assets/UI/UI/Buttons/icon_buttons/close_btn_hover.png" id="3_rf6pu"]
+[ext_resource type="Texture2D" uid="uid://bnhm7t0hrtfkn" path="res://src/Assets/UI/UI/Buttons/start_buttons/ui_btn1.png" id="3_w673n"]
+[ext_resource type="Texture2D" uid="uid://becu4pyxl5sl5" path="res://src/Assets/UI/UI/Buttons/icon_buttons/close_btn_normal.png" id="4_s3hi6"]
+[ext_resource type="Texture2D" uid="uid://bkulv7wg2edeg" path="res://src/Assets/UI/UI/Buttons/icon_buttons/close_btn_pressed.png" id="5_qdvoh"]
+[ext_resource type="Texture2D" uid="uid://dvepfmyt0b2fy" path="res://src/Assets/UI/UI/Buttons/elevator/normalbutton.png" id="7_gurye"]
+[ext_resource type="Script" uid="uid://pykvt418qgr0" path="res://src/Scripts/menu_manager.gd" id="7_qdvoh"]
+[ext_resource type="Texture2D" uid="uid://ermfw8cxajw5" path="res://src/Assets/UI/UI/Buttons/elevator/hoverbutton.png" id="8_xwyhr"]
+[ext_resource type="Script" uid="uid://dyq5gptaxq4ym" path="res://src/Scripts/menu_config.gd" id="8_yjjap"]
+[ext_resource type="Texture2D" uid="uid://crw2rgiyw7kwi" path="res://src/Assets/UI/UI/Buttons/elevator/disablebutton.png" id="9_iqb4h"]
+[ext_resource type="PackedScene" uid="uid://u3nccdqvg4mw" path="res://src/Scenes/audio.tscn" id="13_s7buh"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_747d8"]
+color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+grow_begin = -8.0
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gurye"]
+bg_color = Color(0.93333334, 0.7294118, 0.32941177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjjap"]
+bg_color = Color(0.93333334, 0.7294118, 0.32941177, 1)
+
+[sub_resource type="Resource" id="Resource_11oda"]
+script = ExtResource("8_yjjap")
+menu_parent = NodePath("../TileScaleContainer/NinePatchRect")
+default_button = NodePath("../TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer/MusicS")
+button_parents = Array[NodePath]([NodePath("../TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer"), NodePath("../TileScaleContainer/NinePatchRect")])
+
+[node name="Settings" type="Control" unique_id=355715420]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 342.0
+offset_top = 67.0
+offset_right = 870.0
+offset_bottom = 696.0
+script = ExtResource("1_yjjap")
+
+[node name="TileScaleContainer" type="Container" parent="." unique_id=411159156]
+layout_mode = 0
+offset_right = 531.0
+offset_bottom = 628.0
+script = ExtResource("1_2owe1")
+tile_scale = 2.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TileScaleContainer" unique_id=734263970]
+layout_mode = 2
+texture = ExtResource("2_ti8s7")
+patch_margin_left = 26
+patch_margin_top = 23
+patch_margin_right = 18
+patch_margin_bottom = 25
+
+[node name="CloseSetB" type="TextureButton" parent="TileScaleContainer/NinePatchRect" unique_id=1094794673]
+z_index = 10
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015000001
+anchor_bottom = 0.008
+offset_left = -16.0
+offset_top = -17.5
+offset_right = 19.4375
+offset_bottom = 19.612
+texture_normal = ExtResource("4_s3hi6")
+texture_pressed = ExtResource("5_qdvoh")
+texture_hover = ExtResource("3_rf6pu")
+texture_focused = ExtResource("3_rf6pu")
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TileScaleContainer/NinePatchRect" unique_id=415355481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TileScaleContainer/NinePatchRect/MarginContainer" unique_id=82919366]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer" unique_id=935031403]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MusicL" type="Label" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=259137903]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+theme_override_font_sizes/font_size = 24
+text = "Music"
+
+[node name="MusicS" type="HSlider" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2014530108]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("7_gurye")
+theme_override_icons/grabber_highlight = ExtResource("8_xwyhr")
+theme_override_icons/grabber_disabled = ExtResource("9_iqb4h")
+theme_override_styles/slider = SubResource("StyleBoxLine_747d8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gurye")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yjjap")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SFX_L" type="Label" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1034632651]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+theme_override_font_sizes/font_size = 24
+text = "SFX"
+
+[node name="SFXS" type="HSlider" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=317208468]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("7_gurye")
+theme_override_icons/grabber_highlight = ExtResource("8_xwyhr")
+theme_override_icons/grabber_disabled = ExtResource("9_iqb4h")
+theme_override_styles/slider = SubResource("StyleBoxLine_747d8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gurye")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yjjap")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="UI_L" type="Label" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=157822305]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+theme_override_font_sizes/font_size = 24
+text = "UI"
+
+[node name="UI" type="HSlider" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1915874582]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("7_gurye")
+theme_override_icons/grabber_highlight = ExtResource("8_xwyhr")
+theme_override_icons/grabber_disabled = ExtResource("9_iqb4h")
+theme_override_styles/slider = SubResource("StyleBoxLine_747d8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gurye")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yjjap")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="BackgroundL" type="Label" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1707327767]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "BackGrounds"
+
+[node name="Background" type="OptionButton" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=296887082]
+layout_mode = 2
+
+[node name="ResetAll_L" type="Label" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1407222366]
+layout_mode = 2
+
+[node name="ResetAll" type="Button" parent="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2122115126]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Reset ALL (NewSave)"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1640830098]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -65.0
+offset_right = 150.0
+offset_bottom = 60.0
+grow_horizontal = 2
+texture = ExtResource("3_w673n")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=794219811]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="MenuManager" type="Node" parent="." unique_id=611281135]
+script = ExtResource("7_qdvoh")
+menu = SubResource("Resource_11oda")
+
+[node name="Audio" parent="." unique_id=2058785530 instance=ExtResource("13_s7buh")]
+
+[connection signal="value_changed" from="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer/MusicS" to="." method="_on_music_s_value_changed"]
+[connection signal="value_changed" from="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer/SFXS" to="." method="_on_sfxs_value_changed"]
+[connection signal="value_changed" from="TileScaleContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer/UI" to="." method="_on_ui_value_changed"]

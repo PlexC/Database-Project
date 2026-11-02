@@ -1,0 +1,7 @@
+Assets:
+	Art:
+		otamot(friend)
+		PixelFranek(https://pixelfranek.itch.io/parallax-city-looping)
+		
+	Sounds:
+		

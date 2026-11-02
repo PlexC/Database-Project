@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://kxi7d3h6hhq5"]
+
+[ext_resource type="Script" uid="uid://cor66cn6vsb3u" path="res://src/Scripts/Globals/scene_manager.gd" id="1_meshh"]
+[ext_resource type="Shader" uid="uid://bsaf0yow8qafi" path="res://src/Assets/shader/pixelate.gdshader" id="2_767ib"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2fw5"]
+shader = ExtResource("2_767ib")
+shader_parameter/block_size = 1.0
+
+[sub_resource type="Animation" id="Animation_xt2pr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_piows"]
+resource_name = "load_in"
+
+[sub_resource type="Animation" id="Animation_3y12s"]
+resource_name = "load_out"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7r85"]
+_data = {
+&"RESET": SubResource("Animation_xt2pr"),
+&"load_in": SubResource("Animation_piows"),
+&"load_out": SubResource("Animation_3y12s")
+}
+
+[node name="SceneManager" type="CanvasLayer" unique_id=1670775999]
+script = ExtResource("1_meshh")
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=2099568480]
+material = SubResource("ShaderMaterial_m2fw5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03137255, 0.03137255, 0.023529412, 1)
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1229082796]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -8.5
+offset_right = 42.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.81960785, 1)
+text = "aaaaaa"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1236847274]
+libraries/ = SubResource("AnimationLibrary_b7r85")
